@@ -5,7 +5,7 @@ export const NavBar = () => {
     return (
         <header className="header">
             <nav className="nav">
-                <a href="#">Hola</a>
+                <a href="#">GameHouse</a>
                 <ul className="nav__ul">
                     <li className="nav__item">
                         <a href="#">Home</a>

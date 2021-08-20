@@ -1,3 +1,21 @@
 .itemListComponent {
-    background: red;
+    margin: 2rem;
+
+    h2 {
+        padding: 2rem;
+    }
+
+    .products {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .card__container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1rem;
+        }
+    }
 }
