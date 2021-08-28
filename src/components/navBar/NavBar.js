@@ -1,24 +1,44 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Cart } from "./Cart/Cart.js";
+import { Nav, NavDropdown } from "react-bootstrap";
+import { GiConsoleController } from "react-icons/gi";
+
 import "./NavBar.scss";
 export const NavBar = () => {
     return (
         <header className="header">
-            <nav className="nav">
-                <a href="#">GameHouse</a>
-                <ul className="nav__ul">
-                    <li className="nav__item">
-                        <a href="#">Home</a>
-                    </li>
-                    <li className="nav__item">
-                        <a href="#">About</a>
-                    </li>
-                    <li className="nav__item">
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
+            <Nav className="container nav" defaultActiveKey="/home" as="ul">
+                <Nav.Item className="nav__link" as="li">
+                    <Link className="nav__link" to={"/"}>
+                        <GiConsoleController className="logo__icon" />
+                    </Link>
+                </Nav.Item>
+                <NavDropdown title="Games" id="nav-dropdown">
+                    <NavDropdown.Item eventKey="4.1" className="dropdown__item">
+                        <Link to={"/genre/horror"}>Horror</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item className="dropdown__item" eventKey="4.2">
+                        <Link to={"/genre/suspense"}>Suspense</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.3" className="dropdown__item">
+                        <Link to={"/genre/adventure"}>Adventure</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.4" className="dropdown__item">
+                        <Link to={"/genre/action"}>Action</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.5" className="dropdown__item">
+                        <Link to={"/genre/indie"}>Indie</Link>
+                    </NavDropdown.Item>
+                </NavDropdown>
+                <Nav.Item className="nav__link" as="li">
+                    <Link eventKey="link-2" to={"/about"}>
+                        About
+                    </Link>
+                </Nav.Item>
+
                 <Cart />
-            </nav>
+            </Nav>
         </header>
     );
 };

@@ -1,5 +1,6 @@
 .itemListComponent {
     margin: 2rem;
+    background: rgb(0, 0, 0);
 
     h2 {
         padding: 2rem;
@@ -16,6 +17,32 @@
             justify-content: center;
             flex-wrap: wrap;
             margin: 1rem;
+
+            .myCard {
+                background: none;
+                border: rgba(240, 240, 240, 0.575) solid 1px;
+                padding: 1rem;
+                width: 18rem;
+                color: white;
+
+                .image {
+                    height: 200px;
+                    width: 250px;
+                }
+
+
+                .buy {
+                    margin-right: 1rem;
+                    background: none;
+                    border: rgb(111, 216, 97) solid 1px;
+                }
+
+                .more {
+                    background: none;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
         }
     }
 }
