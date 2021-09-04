@@ -1,0 +1,40 @@
+.cart {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+
+    .cart__detail {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+        padding: .5rem;
+
+
+        .cart-item-title {
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 1rem;
+        }
+
+        .cart-container-p-btn {
+            display: flex;
+
+            .cart-item-p {
+                font-size: 1.4rem;
+            }
+
+            .cart-button {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .cart-button-delete {
+        margin: 2rem;
+    }
+}

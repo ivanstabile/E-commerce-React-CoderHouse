@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./ItemDetail.scss";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import { Counter } from "../Counter/Counter";
+import { Context } from "../../Context/Context";
 
-export const ItemDetail = ({ genre, id, name, desc, img, price }) => {
+export const ItemDetail = ({ genre, id, name, desc, img, price, stock }) => {
+    const { addToCart, isInCart } = useContext(Context);
+    const [counter, setCounter] = useState(1);
+    const handleAdd = (counter) => {
+        addToCart({
+            genre,
+            id,
+            name,
+            desc,
+            price,
+            stock,
+            counter,
+        });
+    };
+
     return (
         <div>
             <section className="details__container">
@@ -21,12 +36,15 @@ export const ItemDetail = ({ genre, id, name, desc, img, price }) => {
                             all
                         </Link>
                         <p>Description: {desc}</p>
-                        <button className="btn btn-primary mx-3">+</button>
-                        <span>0</span>
-                        <button className="btn btn-danger mx-3">-</button>
-                        <Button className="buy" variant="primary">
-                            Add to cart
-                        </Button>
+                        <Counter
+                            max={stock}
+                            counter={counter}
+                            setCounter={setCounter}
+                            addToCart={() => {
+                                handleAdd(counter);
+                            }}
+                            added={isInCart(id)}
+                        />
                     </div>
                 </div>
             </section>

@@ -10,15 +10,13 @@ export const Item = ({ img, price, name, genre, id }) => {
                 <Card.Img className="image" variant="top" src={img} alt={name} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
-                    <Card.Text>
-                        <p>Price: ${price}</p>
-                        <p>Genre: {genre}</p>
-                    </Card.Text>
+                    <Card.Text>Price: ${price}</Card.Text>
+                    <Card.Text>Genre: {genre}</Card.Text>
                     <Button className="buy" variant="primary">
                         Add to cart
                     </Button>
 
-                    <Link classList="more" to={`/details/${id}`}>
+                    <Link className="more" to={`/details/${id}`}>
                         More
                     </Link>
                 </Card.Body>
