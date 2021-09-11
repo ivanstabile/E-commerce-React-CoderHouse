@@ -4,6 +4,7 @@ import apiCall from "../../helpers/apiCall";
 import { ItemList } from "./ItemList";
 import { Spinner } from "../Spinner/Spinner";
 import "./ItemListComponent.scss";
+import { getFirestore } from "../../firebase/config";
 
 export const ItemListComponent = () => {
     const { genreId } = useParams();
@@ -12,18 +13,44 @@ export const ItemListComponent = () => {
 
     useEffect(() => {
         setLoading(true);
-        apiCall()
-            .then((res) => {
-                if (genreId) {
-                    const filteredArray = res.filter((game) => game.genre === genreId);
-                    setData(filteredArray);
-                } else {
-                    setData(res);
-                }
-            })
-            .finally(() => {
-                setLoading(false);
-            });
+        const db = getFirestore();
+        const dbItems = db.collection("Games");
+
+        if (genreId) {
+            const filtered = dbItems.where("genre", "==", genreId);
+            filtered
+                .get()
+                .then((response) => {
+                    const data = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+                    setData(data);
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
+        } else {
+            dbItems
+                .get()
+                .then((response) => {
+                    const data = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+                    setData(data);
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
+        }
+
+        // apiCall()
+        //     .then((res) => {
+        //         if (genreId) {
+        //             const filteredArray = res.filter((game) => game.genre === genreId);
+        //             setData(filteredArray);
+        //         } else {
+        //             setData(res);
+        //         }
+        //     })
+        //     .finally(() => {
+        //         setLoading(false);
+        //     });
     }, [genreId]);
 
     return (

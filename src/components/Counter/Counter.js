@@ -17,7 +17,7 @@ export const Counter = ({ max, counter, setCounter, addToCart, added }) => {
 
     return (
         <div className="detail">
-            {added ? (
+            {/* {added ? (
                 <Link className="btns" to={"/cart"} className="btn btn-success">
                     Finish
                 </Link>
@@ -30,11 +30,33 @@ export const Counter = ({ max, counter, setCounter, addToCart, added }) => {
                     <Button className="btns" onClick={handleRes}>
                         -
                     </Button>
-                    <Button className="btns" onClick={addToCart} className="buy btn-success" variant="primary">
+                    <Button className="btns" onClick={addToCart} disabled={added} className="buy btn-success" variant="primary">
                         Add to cart
                     </Button>
                 </div>
-            )}
+            )} */}
+            <div className="detail__btns">
+                <Button className="btns" onClick={handleSum} disabled={added}>
+                    +
+                </Button>
+                <p>{counter}</p>
+                <Button className="btns" onClick={handleRes} disabled={added}>
+                    -
+                </Button>
+                <Button className="btns" onClick={addToCart} disabled={added} className="buy btn-success" variant="primary">
+                    Add to cart
+                </Button>
+                <div className="finish__container">
+                    <Button className="btns" disabled={!added}>
+                        <Link to={"/cart"} className="btns text-white">
+                            Finish
+                        </Link>
+                    </Button>
+                    <Button className="btns" onClick={(added = true)} disabled={!added} className="buy btn-danger" variant="primary">
+                        X
+                    </Button>
+                </div>
+            </div>
         </div>
     );
 };

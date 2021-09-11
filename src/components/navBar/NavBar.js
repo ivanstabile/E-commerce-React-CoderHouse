@@ -15,8 +15,8 @@ export const NavBar = () => {
                     </Link>
                 </Nav.Item>
                 <NavDropdown title="Games" id="nav-dropdown">
-                    <NavDropdown.Item as={Link} className="dropdown__item">
-                        Horror
+                    <NavDropdown.Item className="dropdown__item">
+                        <Link to={"/genre/horror"}>Horror</Link>
                     </NavDropdown.Item>
                     <NavDropdown.Item className="dropdown__item" eventKey="4.2">
                         <Link to={"/genre/suspense"}>Suspense</Link>
@@ -34,7 +34,6 @@ export const NavBar = () => {
                 <Nav.Item className="nav__link" as="li">
                     <Link to={"/about"}>About</Link>
                 </Nav.Item>
-
                 <Cart />
             </Nav>
         </header>

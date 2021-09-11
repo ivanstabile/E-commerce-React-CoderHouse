@@ -9,8 +9,14 @@ export const Cart = () => {
     return (
         <Link to={"/cart"}>
             <div className="cart__container">
-                <FaCartArrowDown className="cart__icon" />
-                <span>{cartQty()}</span>
+                {cartQty() == 0 ? (
+                    <></>
+                ) : (
+                    <>
+                        <FaCartArrowDown className="cart__icon" />
+                        <span>{cartQty()}</span>
+                    </>
+                )}
             </div>
         </Link>
     );
