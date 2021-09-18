@@ -28,6 +28,9 @@ export const CartScreen = () => {
                     <Button className="btn btn-danger cart-button-delete" onClick={clearCart}>
                         Delete
                     </Button>
+                    <Link to={"/checkout"}>
+                        <Button className="btn btn-success cart-button-delete">Checkout</Button>
+                    </Link>
                 </div>
             )}
         </>
