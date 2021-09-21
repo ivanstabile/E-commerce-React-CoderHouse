@@ -6,3 +6,48 @@
         object-fit: fill;
     }
 }
+
+.container__main {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding: 2rem;
+
+
+    .img__container {
+        height: 450px;
+        margin: 2.5rem;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .text__container {
+        align-self: center;
+        padding: 1.5rem;
+        margin: 2rem;
+
+        h1 {
+            color: white;
+            font-size: 5rem;
+            font-weight: 100;
+
+            span {
+                color: #FF4545;
+                font-weight: bold;
+            }
+        }
+
+
+        p {
+            color: white;
+
+            span {
+                color: #FF4545;
+                font-weight: bold;
+            }
+        }
+
+    }
+}

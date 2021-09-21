@@ -1,13 +1,21 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
 .cart__container {
     padding: 1rem;
     display: flex;
     align-items: center;
 
     .cart__icon {
-        font-size: 1.5rem;
-    }
-
-    span {
-        padding: .5rem;
+        color: white;
+        height: 4rem;
+        width: 2rem;
+        margin: 0.5rem;
     }
 }

@@ -1,6 +1,5 @@
 .itemListComponent {
     margin: 2rem;
-    background: rgb(0, 0, 0);
 
     h2 {
         padding: 2rem;
@@ -20,7 +19,7 @@
 
             .myCard {
                 background: none;
-                border: rgba(240, 240, 240, 0.575) solid 1px;
+                border: rgba(240, 240, 240, 0.185) solid 1px;
                 padding: 1rem;
                 width: 18rem;
                 color: white;
@@ -39,8 +38,16 @@
 
                 .more {
                     background: none;
-                    color: white;
+                    color: rgb(226, 145, 38);
                     text-decoration: none;
+                    padding: .2rem .5rem;
+                    border: solid white 1px;
+                    transition: background, color .2s;
+                }
+
+                .more:hover {
+                    background: rgb(226, 145, 38);
+                    color: white;
                 }
             }
         }

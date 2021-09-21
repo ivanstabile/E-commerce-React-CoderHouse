@@ -3,6 +3,7 @@ import { Context } from "../../Context/Context";
 import { generateOrder } from "../../firebase/generateOrder";
 import Swal from "sweetalert2";
 import { Redirect } from "react-router";
+import "./checkout.scss";
 
 export const Checkout = () => {
     const { cart, totalCart, clearCart } = useContext(Context);
@@ -48,19 +49,33 @@ export const Checkout = () => {
     };
 
     return (
-        <div>
+        <div className="checkout__container">
             <h2>Checkout</h2>
-            <hr />
-
             {!cart.length ? (
                 <Redirect to="/" />
             ) : (
-                <div>
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" value={values.name} onChange={handleInputChange} name="name" required />
-                        <input type="tel" value={values.tel} onChange={handleInputChange} name="tel" required />
-                        <input type="email" value={values.email} onChange={handleInputChange} name="email" required />
-                        <button type="submit">Submit</button>
+                <div className="checkout__form-container">
+                    <div className="credit-card-container">
+                        {" "}
+                        <img className="credit-card-img" src="./images/credit-card.svg" />
+                    </div>
+                    <form className="form" onSubmit={handleSubmit}>
+                        <label>
+                            {" "}
+                            Name:
+                            <input placeholder="Name" type="text" value={values.name} onChange={handleInputChange} name="name" required />
+                        </label>
+
+                        <label>
+                            Phone number: <input placeholder="Phone" type="tel" value={values.tel} onChange={handleInputChange} name="tel" required />
+                        </label>
+                        <label>
+                            Email:
+                            <input placeholder="Email" type="email" value={values.email} onChange={handleInputChange} name="email" required />
+                        </label>
+                        <button className="btn btn-success btn-lg" type="submit">
+                            Submit
+                        </button>
                     </form>
                 </div>
             )}

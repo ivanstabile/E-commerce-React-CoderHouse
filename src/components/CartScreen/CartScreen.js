@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Context } from "../../Context/Context";
-import Button from "react-bootstrap/Button";
 import "./cartScreen.scss";
 import { Link } from "react-router-dom";
 
@@ -9,27 +8,37 @@ export const CartScreen = () => {
     return (
         <>
             {cart == 0 ? (
-                <Link class="btn btn-danger" to={"/"}>
-                    Back
-                </Link>
+                <div className="empty__cart">
+                    <div className="img__container">
+                        <img className="img" src="./images/empty.svg"></img>
+                    </div>
+                    <Link class="btn btn-danger back-button" to={"/"}>
+                        Back
+                    </Link>
+                </div>
             ) : (
                 <div className="cart">
                     {cart.map((prod) => (
                         <div className="cart__detail" key={prod.id}>
-                            <p className="cart-item-title">{prod.name}</p>
+                            <h3 className="cart-item-title">{prod.name} -</h3>
                             <div className="cart-container-p-btn">
-                                <p className="cart-item-p">Price: ${prod.price * prod.counter}</p>
-                                <Button className="btn btn-danger cart-button" onClick={() => deleteCartItem(prod.id)}>
+                                <h5 className="cart-item-p"> ${prod.price * prod.counter}</h5>
+                                <button className="btn btn-danger cart-button" onClick={() => deleteCartItem(prod.id)}>
                                     X
-                                </Button>
+                                </button>
                             </div>
                         </div>
                     ))}
-                    <Button className="btn btn-danger cart-button-delete" onClick={clearCart}>
-                        Delete
-                    </Button>
-                    <Link to={"/checkout"}>
-                        <Button className="btn btn-success cart-button-delete">Checkout</Button>
+                    <div className="buttons">
+                        <Link to={"/checkout"}>
+                            <button className="btn btn-success cart-button-delete">Checkout</button>
+                        </Link>
+                        <button className="btn btn-danger cart-button-delete" onClick={clearCart}>
+                            Delete
+                        </button>
+                    </div>
+                    <Link to={"/"}>
+                        <button className="btn btn-outline-success btn-lg">Back</button>
                     </Link>
                 </div>
             )}

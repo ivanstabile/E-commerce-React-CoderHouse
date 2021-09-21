@@ -14,7 +14,7 @@ export const Cart = () => {
                 ) : (
                     <>
                         <FaCartArrowDown className="cart__icon" />
-                        <span>{cartQty()}</span>
+                        <span className="cart__span">{cartQty()}</span>
                     </>
                 )}
             </div>
