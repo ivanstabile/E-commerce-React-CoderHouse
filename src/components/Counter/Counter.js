@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import "./counter.scss";
 
@@ -17,44 +16,25 @@ export const Counter = ({ max, counter, setCounter, addToCart, added }) => {
 
     return (
         <div className="detail">
-            {/* {added ? (
-                <Link className="btns" to={"/cart"} className="btn btn-success">
-                    Finish
-                </Link>
-            ) : (
-                <div className="detail__btns">
-                    <Button className="btns" onClick={handleSum}>
-                        +
-                    </Button>
-                    <p>{counter}</p>
-                    <Button className="btns" onClick={handleRes}>
-                        -
-                    </Button>
-                    <Button className="btns" onClick={addToCart} disabled={added} className="buy btn-success" variant="primary">
-                        Add to cart
-                    </Button>
-                </div>
-            )} */}
             <div className="detail__btns">
-                <Button className="btns" onClick={handleSum} disabled={added}>
-                    +
-                </Button>
-                <p>{counter}</p>
-                <Button className="btns" onClick={handleRes} disabled={added}>
-                    -
-                </Button>
-                <Button className="btns" onClick={addToCart} disabled={added} className="buy btn-success" variant="primary">
+                <div className="detail__btns-add">
+                    <button className="btns btn" onClick={handleRes} disabled={added}>
+                        -
+                    </button>
+                    <p>{counter}</p>
+                    <button className="btns btn" onClick={handleSum} disabled={added}>
+                        +
+                    </button>
+                </div>
+                <button className="btns btn" onClick={addToCart} disabled={added}>
                     Add to cart
-                </Button>
+                </button>
                 <div className="finish__container">
-                    <Button className="btns" disabled={!added}>
+                    <button className="btns btn" disabled={!added}>
                         <Link to={"/cart"} className="btns text-white">
                             Finish
                         </Link>
-                    </Button>
-                    <Button className="btns" onClick={(added = true)} disabled={!added} className="buy btn-danger" variant="primary">
-                        X
-                    </Button>
+                    </button>
                 </div>
             </div>
         </div>

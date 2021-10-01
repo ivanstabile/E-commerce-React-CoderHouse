@@ -8,5 +8,54 @@
         display: flex;
         align-items: center;
 
+        .detail__btns-add {
+            display: flex;
+            align-items: center;
+
+            p {
+                padding: 0;
+                margin: .5rem;
+            }
+        }
+
+        .btn {
+            background: #FF4545;
+            color: rgb(255, 255, 255);
+            border: none;
+            font-weight: bold;
+            padding: .1rem .5rem;
+        }
+
+    }
+}
+
+@media screen and (max-width:500px) {
+    .btns {
+        margin: .3rem;
+        padding: 1rem;
+    }
+
+    .detail {
+        .detail__btns {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .detail__btns-add {
+                display: flex;
+                align-items: center;
+
+                p {
+                    padding: 0;
+                    margin: .5rem;
+                }
+            }
+
+            .btn {
+                padding: .2rem 1rem;
+                margin: .5rem;
+            }
+
+        }
     }
 }

@@ -57,7 +57,7 @@ export const Checkout = () => {
                 <div className="checkout__form-container">
                     <div className="credit-card-container">
                         {" "}
-                        <img className="credit-card-img" src="./images/credit-card.svg" />
+                        <img className="credit-card-img" src="./images/credit-card.svg" alt="credit card" />
                     </div>
                     <form className="form" onSubmit={handleSubmit}>
                         <label>

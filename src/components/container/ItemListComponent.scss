@@ -15,41 +15,52 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 1rem;
+            margin: 2rem;
 
             .myCard {
-                background: none;
-                border: rgba(240, 240, 240, 0.185) solid 1px;
-                padding: 1rem;
-                width: 18rem;
-                color: white;
+                background: #e8e6ff;
+                width: 14rem;
+                color: rgb(3, 3, 3);
+                border: none;
+                overflow: hidden;
 
                 .image {
-                    height: 200px;
-                    width: 250px;
+                    height: 120px;
+                    object-fit: cover;
+                    transition: transform .3s;
                 }
 
-
-                .buy {
-                    margin-right: 1rem;
-                    background: none;
-                    border: rgb(111, 216, 97) solid 1px;
+                .image:hover {
+                    transform: scale(1.1);
                 }
+
+                .title {
+                    font-weight: bold;
+                }
+
 
                 .more {
-                    background: none;
-                    color: rgb(226, 145, 38);
+                    background: #4b4a68;
+                    color: white;
                     text-decoration: none;
-                    padding: .2rem .5rem;
-                    border: solid white 1px;
-                    transition: background, color .2s;
+                    padding: .1rem 1rem;
+                    transition: background .2s;
                 }
 
                 .more:hover {
-                    background: rgb(226, 145, 38);
-                    color: white;
+                    background: rgb(65, 62, 90);
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width:900px) {
+    .itemListComponent {
+        margin: none;
+
+        h2 {
+            margin-top: -2rem;
         }
     }
 }

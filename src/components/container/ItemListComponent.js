@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import apiCall from "../../helpers/apiCall";
 import { ItemList } from "./ItemList";
 import { Spinner } from "../Spinner/Spinner";
 import "./ItemListComponent.scss";
@@ -38,19 +37,6 @@ export const ItemListComponent = () => {
                     setLoading(false);
                 });
         }
-
-        // apiCall()
-        //     .then((res) => {
-        //         if (genreId) {
-        //             const filteredArray = res.filter((game) => game.genre === genreId);
-        //             setData(filteredArray);
-        //         } else {
-        //             setData(res);
-        //         }
-        //     })
-        //     .finally(() => {
-        //         setLoading(false);
-        //     });
     }, [genreId]);
 
     return (

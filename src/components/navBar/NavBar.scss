@@ -19,12 +19,41 @@
             .nav__link {
                 color: white;
                 font-weight: bolder;
+                font-size: 0.9rem;
                 text-decoration: none;
                 transition: color .2s;
             }
 
             .nav__link:hover {
                 color: #FF4545;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:900px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo__icon {
+            display: none;
+        }
+
+        .nav {
+            margin: .1rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            .nav__item {
+                color: black;
+                margin: .3rem;
+
+                .nav__link {
+                    font-size: 0.8rem;
+                }
             }
         }
     }

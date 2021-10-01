@@ -51,3 +51,30 @@
         }
     }
 }
+
+@media screen and (max-width:900px) {
+    .checkout__container {
+
+        h2 {
+            padding: none;
+        }
+
+        .checkout__form-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100vw;
+            padding: 2rem;
+
+            .credit-card-container {
+                height: 200px;
+                margin: .1rem;
+            }
+
+            .form {
+                width: 100vw;
+            }
+        }
+    }
+}

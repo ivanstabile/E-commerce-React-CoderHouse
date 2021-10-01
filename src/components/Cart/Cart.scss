@@ -14,8 +14,22 @@ a:hover {
 
     .cart__icon {
         color: white;
-        height: 4rem;
-        width: 2rem;
+        height: 2rem;
+        width: 1.5rem;
         margin: 0.5rem;
+    }
+}
+
+@media screen and (max-width:900px) {
+
+    .cart__container {
+        padding: .5rem;
+
+        .cart__icon {
+            color: white;
+            height: 2rem;
+            width: 1.5rem;
+            margin: 0.5rem;
+        }
     }
 }
