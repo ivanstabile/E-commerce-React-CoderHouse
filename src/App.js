@@ -4,7 +4,7 @@ import { NavBar } from "./components/navBar/NavBar.js";
 import { ItemListComponent } from "./components/container/ItemListComponent.js";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { CarouselComponent } from "./components/CarouselComponent/CarouselComponent";
+import { HeroComponent } from "./components/HeroComponent/HeroComponent";
 import { CartScreen } from "./components/CartScreen/CartScreen";
 import { CartProvider } from "./Context/Context";
 import { Checkout } from "./components/Checkout/Checkout";
@@ -17,7 +17,7 @@ function App() {
                     <NavBar />
                     <Switch>
                         <Route exact path="/">
-                            <CarouselComponent />
+                            <HeroComponent />
                             <ItemListComponent />
                         </Route>
                         <Route exact path="/genre/:genreId">
