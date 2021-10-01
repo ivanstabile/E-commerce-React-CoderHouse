@@ -8,7 +8,7 @@ import { HeroComponent } from "./components/HeroComponent/HeroComponent";
 import { CartScreen } from "./components/CartScreen/CartScreen";
 import { CartProvider } from "./Context/Context";
 import { Checkout } from "./components/Checkout/Checkout";
-
+//
 function App() {
     return (
         <div className="App">
