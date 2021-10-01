@@ -18,19 +18,19 @@ export const Counter = ({ max, counter, setCounter, addToCart, added }) => {
         <div className="detail">
             <div className="detail__btns">
                 <div className="detail__btns-add">
-                    <button className="btns btn" onClick={handleRes} disabled={added}>
+                    <button className="btns btn btn-counter" onClick={handleRes} disabled={added}>
                         -
                     </button>
                     <p>{counter}</p>
-                    <button className="btns btn" onClick={handleSum} disabled={added}>
+                    <button className="btns btn btn-counter" onClick={handleSum} disabled={added}>
                         +
                     </button>
                 </div>
-                <button className="btns btn" onClick={addToCart} disabled={added}>
+                <button className="btns btn btn-success" onClick={addToCart} disabled={added}>
                     Add to cart
                 </button>
                 <div className="finish__container">
-                    <button className="btns btn" disabled={!added}>
+                    <button className="btn btn-success" disabled={!added}>
                         <Link to={"/cart"} className="btns text-white">
                             Finish
                         </Link>
